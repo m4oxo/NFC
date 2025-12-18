@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dot Style Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#0f0f10;
+    --bg2:#1a1b1e;
+    --card:#111214;
+    --accent:#4f7cff;
+    --text:#ffffff;
+    --muted:#b8b8b8;
+    --btn:#1b1c20;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 10% -10%, #2a2b30 0%, transparent 60%),
+                radial-gradient(1200px 600px at 90% 10%, #202225 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg1), var(--bg2));
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(79, 124, 255, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(79, 124, 255, 0.6); }
+  }
+  .card{
+    width:100%;
+    max-width:420px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    backdrop-filter: blur(10px);
+    border-radius:28px;
+    padding:26px 22px 24px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
+    animation: fadeIn 0.8s ease-out;
+  }
+  .avatar{
+    width:120px;height:120px;border-radius:50%;
+    margin:8px auto 14px;
+    background: linear-gradient(135deg, var(--accent), #8aa6ff);
+    padding:4px;
+    animation: glow 3s ease-in-out infinite;
+  }
+  .avatar img{
+    width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000;
+  }
+  h1{margin:8px 0 4px;font-size:26px;font-weight:700;text-align:center}
+  .handle{color:var(--muted);text-align:center;font-size:14px}
+  .bio{margin:10px 0 18px;text-align:center;color:#e0e0e0;font-size:15px}
+  .grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;
+  }
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    text-decoration:none;color:var(--text);
+    padding:14px;border-radius:16px;
+    background:linear-gradient(180deg, #1f2026, #17181d);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    font-weight:500;font-size:15px;
+    transition: all 0.3s ease;
+  }
+  .btn.full{grid-column:1/-1}
+  .btn.primary{
+    background: linear-gradient(180deg, var(--accent), #3f66ff);
+    border:none;
+    animation: glow 2s ease-in-out infinite;
+  }
+  .btn:hover{
+    transform:scale(1.02);
+    opacity:.95;
+    box-shadow: 0 5px 15px rgba(79, 124, 255, 0.4);
+  }
+  .divider{height:1px;background:rgba(255,255,255,.12);margin:14px 0}
+  .foot{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+  .icon{width:18px;height:18px;display:inline-block}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="avatar">
+      <img src="profile.jpg" alt="Profile">
+    </div>
+    <h1>Manssor Al-haideri</h1>
+    <div class="handle">@yourhandle</div>
+    <div class="bio">Creator • Engineer • Artist</div>
+
+    <div class="grid">
+      <a class="btn" href="https://www.instagram.com/m4oxo?igsh=cGp2cGk2MGUwMXAw&utm_source=qr">
+        <span class="icon">📸</span>Instagram
+      </a>
+      <a class="btn" href="https://www.tiktok.com/@m4oxoo?_r=1&_t=ZP-92JjP5LGG3q">
+        <span class="icon">🎵</span>TikTok
+      </a>
+      <a class="btn" href="https://snapchat.com/t/H979nzkh">
+        <span class="icon">👻</span>Snapchat
+      </a>
+      <a class="btn" href="https://yourwebsite.com">
+        <span class="icon">🌐</span>Website
+      </a>
+      <a class="btn primary full" href="contact.vcf">
+        <span class="icon">💾</span>Save Contact
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <a class="btn full" href="tel:+18596993034">
+      <span class="icon">📞</span>+1 (859) 699-3034
+    </a>
+    <a class="btn full" href="mailto:manssorisaac@gmail.com">
+      <span class="icon">✉️</span>manssorisaac@gmail.com
+    </a>
+
+    <div class="foot">Tap to connect • NFC Ready</div>
+  </div>
+</body>
+</html>
